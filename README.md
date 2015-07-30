@@ -1,6 +1,8 @@
 # pysentosa
 The smallest algorithmic trading system in the world
 
+> easy_install http://pypi.python.org/packages/2.7/p/pysentosa/pysentosa-0.1.1-py2.7.egg
+
 ```
   from pysentosa.merlion import *
   
