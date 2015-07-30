@@ -1,7 +1,7 @@
 # pysentosa
 The smallest algorithmic trading system in the world
 
-
+```
   from pysentosa.merlion import *
   
   m = Merlion().run()
@@ -18,3 +18,4 @@ The smallest algorithmic trading system in the world
       elif ticktype == BID_PRICE and value > bounds[symbol][1]:
           m.sell(symbol, 100)
           bounds[symbol][1] += 10
+```
