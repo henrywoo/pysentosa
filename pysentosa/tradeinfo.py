@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = 'Wu Fuheng(henry.woo@outlook.com)'
+__version__= '0.1.18'
+
 import os
 import json
 

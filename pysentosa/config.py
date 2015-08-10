@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+__author__ = 'Wu Fuheng(henry.woo@outlook.com)'
+__version__= '0.1.18'
+
 from datetime import datetime
 import os
 import urllib
@@ -39,7 +42,7 @@ def __get_symbol():
   return syms
 
 YMD=datetime.now().strftime("%Y-%m-%d")
-CONFDIR = os.path.expanduser("~") + os.sep + '.sentosa' + os.sep
+CONFDIR = os.path.expanduser("~/.sentosa/")
 LOCALIP = __get_ip()
 yml_sentosa, yml_holiday = __load_yml(CONFDIR)
 SYMBOLS = __get_symbol()

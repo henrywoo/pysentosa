@@ -1,4 +1,8 @@
-__author__ = 'henry.woo@outlook.com'
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = 'Wu Fuheng(henry.woo@outlook.com)'
+__version__= '0.1.18'
 
 BID_SIZE=0
 BID_PRICE=1
@@ -60,11 +64,11 @@ VOLUME_RATE=56
 LAST_RTH_TRADE=57
 NOT_SET=58
 #//////////////////////////////////////////////////////////////////////////
-HENRY_CONTID=59
-HENRY_PORTFOLIO=60
-HENRY_ACCOUNT=61
-HENRY_RT5SBAR=62
-HENRY_5SWAPSPREAD=63
+SEN_CONTID=59
+SEN_PORTFOLIO=60
+SEN_ACCOUNT=61
+SEN_RT5SBAR=62
+SEN_5SWAPSPD=63
 TTSIZE=64
 
 
@@ -129,10 +133,10 @@ TTSTR=[
   "LAST_RTH_TRADE",
   "NOT_SET",
 
-  "HENRY_CONTID",
-  "HENRY_PORTFOLIO",
-  "HENRY_ACCOUNT",
-  "HENRY_RT5SBAR",
-  "HENRY_5SWAPSPREAD",
+  "SEN_CONTID",
+  "SEN_PORTFOLIO",
+  "SEN_ACCOUNT",
+  "SEN_RT5SBAR",
+  "SEN_5SWAPSPD",
   "TTSIZE"
 ]
