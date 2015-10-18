@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Wu Fuheng(henry.woo@outlook.com)'
-__version__= '0.1.18'
+__version__= '0.1.24'
 
 from sentosa_ import tradingsystem
 from ticktype import *
+from order import *
 from config   import *
 from nanomsg  import *
 from websocket import create_connection
@@ -60,7 +61,8 @@ class Merlion(object):
 
   def subscribe(self):
     self.s1 = Socket(SUB)
-    url = 'tcp://127.0.0.1:{}'.format(yml_sentosa['global']['MKD_TO_ALGO_PORT'])
+    port = yml_sentosa['global']['MKD_TO_ALGO_PORT']
+    url = 'tcp://127.0.0.1:{}'.format(port)
     self.s1.connect(url)
     self.s1.set_string_option(SUB, SUB_SUBSCRIBE, '')
 
@@ -70,7 +72,8 @@ class Merlion(object):
           try:
               url = 'ws://{}:16180/ws'.format(LOCALIP)
               self.ws = create_connection(url)
-              return
+              if (self.ws.recv()=='z'):
+                return
           except:
               sleep(1)
               count += 1
@@ -107,15 +110,51 @@ class Merlion(object):
   def get_aPNL(self):
     pass
 
-  def buy(self, ticker, share):
-    msg='m|{}|{}'.format(ticker,share)
+  def mkt_order(self, symbol, share):
+    mkto_tag = yml_sentosa['protocol']['mktorder']
+    msg = mkto_tag + '|{}|{}'.format(symbol,share)
     self.ws.send(msg)
 
-  def sell(self, ticker, share):
-    msg='m|{}|{}'.format(ticker,-share)
-    self.ws.send(msg)
+    oid = self.ws.recv()
+    tag=yml_sentosa['protocol']['orderid']
+    if oid.startswith(tag+"|"):
+        return int(oid[len(tag)+1:])
+    else:
+        return INVALID
+
+  def buy(self, symbol, share):
+    """
+      :param symbol: ticker symobl
+      :param share: how many shares you want to buy
+      :return: order id which has been placed to trading engine
+      """
+    return self.mkt_order(symbol, share)
+
+  def sell(self, symbol, share):
+    """
+      :param symbol: ticker symobl
+      :param share: how many shares you want to sell
+      :return: order id which has been placed to trading engine
+      """
+    return self.mkt_order(symbol, -share)
+
+  def get_order_status(self, oid):
+    """
+    :param oid: order id
+    :return: order status (integer)
+    """
+    tag=yml_sentosa['protocol']['orderid']
+    msgout=tag+'|'+str(oid)
+    self.ws.send(msgout)
+
+    msgin = self.ws.recv()
+    return int(msgin[len(msgout)+1:])
 
   def run_sentosa(self):
+    """
+    Run sentosa trading engine in python
+    :return: Merlion object
+    """
     self.p = Process(target=run_daemon)
     self.p.start()
     return self
@@ -123,14 +162,20 @@ class Merlion(object):
 if __name__ == '__main__':
     m = Merlion()
     target = 'SPY'
-    m.track_symbol([target, 'BITA', 'NTES', 'GOOG'])
-    bounds = {target: [200, 250]}
+    m.track_symbol([target, 'BITA'])
+    bounds = {target: [220, 250]}
     while True:
       symbol, ticktype, value = m.get_mkdata()
       if symbol == target:
         if ticktype == ASK_PRICE and value < bounds[symbol][0]:
-            m.buy(symbol, 100)
-            bounds[symbol][0] -= 10
+            oid = m.buy(symbol, 5)
+            while True:
+                ord_st = m.get_order_status(oid)
+                print ORDSTATUS[ord_st]
+                if ord_st == FILLED:
+                    bounds[symbol][0] -= 20
+                    break
+                sleep(2)
         elif ticktype == BID_PRICE and value > bounds[symbol][1]:
-            m.sell(symbol, 100)
-            bounds[symbol][1] += 10
+            oid = m.sell(symbol, 100)
+            bounds[symbol][1] += 20
