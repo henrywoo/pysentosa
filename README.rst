@@ -52,3 +52,9 @@ pysentosa - Python API for sentosa trading system
           elif ticktype == BID_PRICE and value > bounds[symbol][1]:
               oid = m.sell(symbol, 100)
               bounds[symbol][1] += 20
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/henrywoo/pysentosa/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
