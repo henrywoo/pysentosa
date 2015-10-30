@@ -1,4 +1,5 @@
-pysentosa - Python API for sentosa trading system
+##pysentosa - Python API for sentosa trading system
+
 ============================================================================================
 
 - pysentosa is the Python API for sentosa trading system written by Wu Fuheng
@@ -9,11 +10,12 @@ pysentosa - Python API for sentosa trading system
 
 - Installation:
 
-  ::
+  ```
 
     sudo apt-get install -y python-pip libboost-all-dev libyaml-cpp0.5
     sudo easy_install http://pypi.python.org/packages/2.7/p/pysentosa/pysentosa-0.1.24-py2.7.egg
     sudo pip install pyyaml netifaces websocket-client nanomsg setproctitle psutil
+  ```
 
 - Launch your IB TWS.
 
@@ -21,14 +23,15 @@ pysentosa - Python API for sentosa trading system
 
   Run demo:
 
-  ::
+  ```
 
     from pysentosa.demo import run_demo
     run_demo()
+  ```
 
   Sample code:
 
-  ::
+  ```
 
     from pysentosa import Merlion
     from ticktype import *
@@ -52,5 +55,6 @@ pysentosa - Python API for sentosa trading system
           elif ticktype == BID_PRICE and value > bounds[symbol][1]:
               oid = m.sell(symbol, 100)
               bounds[symbol][1] += 20
+  ```
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/henrywoo/pysentosa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
