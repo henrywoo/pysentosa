@@ -13,4 +13,3 @@ python setup.py sdist build
 twine upload --username wufuheng dist/pysentosa*
 
 pip install -U pysentosa
-#easy_install dist/pysentosa-0.1.27-py2.7.egg
