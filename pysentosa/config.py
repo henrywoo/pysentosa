@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Wu Fuheng(henry.woo@outlook.com)'
-__version__= '0.1.25'
+__version__= '0.1.26'
 
 from datetime import datetime
 import os
@@ -11,10 +11,13 @@ import yaml
 import netifaces as ni
 
 def __get_ip():
+  ifname = [i for i in ni.interfaces() if i[0] == 'e']
+  if len(ifname)==0:
+      return '0.0.0.0'
   try:
-    return ni.ifaddresses('eth0')[2][0]['addr']
+    return ni.ifaddresses(ifname[0])[2][0]['addr']
   except ValueError, e:
-    return ni.ifaddresses('em0')[2][0]['addr']
+    return ni.ifaddresses(ifname[0])[2][0]['addr']
 
 def __load_yml(conf_dir):
   if not os.path.exists(conf_dir):
