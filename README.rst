@@ -9,7 +9,7 @@ pysentosa - Python API for sentosa trading system
 
 - Installation:
 
-  .. code-block:: python
+  .. code-block:: bash
 
     wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_yaml_cpp.sh
     chmod u+x install_yaml_cpp.sh
