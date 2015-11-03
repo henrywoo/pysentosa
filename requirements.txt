@@ -1,0 +1,6 @@
+pyyaml
+netifaces
+websocket-client
+nanomsg
+setproctitle
+psutil
