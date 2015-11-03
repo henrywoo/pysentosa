@@ -13,7 +13,7 @@
   ```
 
     sudo apt-get install -y python-pip libboost-all-dev libyaml-cpp0.5
-    sudo easy_install http://pypi.python.org/packages/2.7/p/pysentosa/pysentosa-0.1.24-py2.7.egg
+    sudo easy_install http://pypi.python.org/packages/2.7/p/pysentosa/pysentosa-0.1.25-py2.7.egg
     sudo pip install pyyaml netifaces websocket-client nanomsg setproctitle psutil
   ```
 

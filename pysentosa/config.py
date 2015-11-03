@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Wu Fuheng(henry.woo@outlook.com)'
-__version__= '0.1.24'
+__version__= '0.1.25'
 
 from datetime import datetime
 import os
