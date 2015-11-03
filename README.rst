@@ -9,8 +9,7 @@ pysentosa - Python API for sentosa trading system
 
 - Installation:
 
-  .. code-block:: shell
-     :linenos:
+  .. code-block:: bash
 
     wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_yaml_cpp.sh
     chmod u+x install_yaml_cpp.sh
@@ -26,7 +25,6 @@ pysentosa - Python API for sentosa trading system
   Run demo:
 
   .. code-block:: python
-     :linenos:
 
     from pysentosa.demo import run_demo
     run_demo()
@@ -34,9 +32,6 @@ pysentosa - Python API for sentosa trading system
   Sample code:
 
   .. code-block:: python
-     :linenos:
-     :caption: demo.py
-     :name: demo-py
 
       from pysentosa import Merlion
       from ticktype import *
