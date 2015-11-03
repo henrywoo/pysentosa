@@ -11,9 +11,12 @@ pysentosa - Python API for sentosa trading system
 
   ::
 
-    sudo apt-get install -y python-pip libboost-all-dev libyaml-cpp0.5
-    sudo easy_install http://pypi.python.org/packages/2.7/p/pysentosa/pysentosa-0.1.27-py2.7.egg
-    sudo pip install pyyaml netifaces websocket-client nanomsg setproctitle psutil
+    wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_yaml_cpp.sh
+    chmod u+x install_yaml_cpp.sh
+    ./install_yaml_cpp.sh
+
+    sudo apt-get install -y python-pip libboost-all-dev
+    sudo pip install -U pysentosa pyyaml netifaces websocket-client nanomsg setproctitle psutil
 
 - Launch your IB TWS.
 
@@ -57,4 +60,3 @@ pysentosa - Python API for sentosa trading system
 .. image:: https://d2weczhvl823v0.cloudfront.net/henrywoo/pysentosa/trend.png
    :alt: Bitdeli badge
    :target: https://bitdeli.com/free
-
