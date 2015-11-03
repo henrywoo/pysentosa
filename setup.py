@@ -19,9 +19,8 @@ setup(
     name = "pysentosa",
     version="0.1.24",
     packages = find_packages(),
-    data_files=[
-      ('pysentosa', ['pysentosa/sentosa_.so']),
-    ],
+    package_dir ={'pysentosa', ['pysentosa']},
+    package_data={'pysentosa', ['sentosa_.so']},
     description = "Pysentosa - Python API for sentosa trading system",
     long_description = LONG_DESCRIPTION,
     author = "Wu Fuheng",
