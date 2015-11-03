@@ -5,7 +5,7 @@ pysentosa - Python API for sentosa trading system
 
 - WebSite: http://www.quant365.com (Quant365 - Trading with Science and Technology)
 
-- OS: Linux Ubuntu 15.04 64bit
+- OS: Linux Ubuntu 15.10 64bit
 
 - Installation:
 
