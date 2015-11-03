@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Wu Fuheng(henry.woo@outlook.com)'
-__version__= '0.1.26'
+__version__= '0.1.27'
 
 def run_demo():
   s='''from pysentosa import Merlion

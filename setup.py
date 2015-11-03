@@ -15,7 +15,7 @@ LONG_DESCRIPTION = read("README.rst")
 
 setup(
     name = "pysentosa",
-    version="0.1.26",
+    version="0.1.27",
     packages = find_packages(),
     package_dir ={'pysentosa': 'pysentosa'},
     package_data={'pysentosa': ['sentosa_.so']},
