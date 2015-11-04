@@ -12,12 +12,12 @@
 - Installation:
 
   ```
-
-    wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_nanomsg.sh
+    GITURL=https://raw.githubusercontent.com/henrywoo/pysentosa/master
+    wget $GITURL/install_nanomsg.sh -O install_nanomsg.sh
     chmod u+x install_nanomsg.sh
     ./install_nanomsg.sh
 
-    wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_yaml_cpp.sh
+    wget $GITURL/install_yaml_cpp.sh -O install_yaml_cpp.sh
     chmod u+x install_yaml_cpp.sh
     ./install_yaml_cpp.sh
 
@@ -32,7 +32,6 @@
   Run demo:
 
   ```
-
     from pysentosa.demo import run_demo
     run_demo()
   ```
@@ -40,7 +39,6 @@
   Sample code:
 
   ```
-
     from pysentosa import Merlion
     from ticktype import *
 
