@@ -1,9 +1,5 @@
 ##pysentosa - Python API for sentosa trading system
 
-TODO:
-
-- Install nanomsg script
-
 ============================================================================================
 
 - pysentosa is the Python API for sentosa trading system written by Wu Fuheng
