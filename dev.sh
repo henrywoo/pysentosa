@@ -11,5 +11,5 @@ pushd /singapore/research/pysentosa
 pip uninstall pysentosa --yes
 rm -fr build/ dist/ pysentosa.egg-info/
 python setup.py bdist_egg
-easy_install dist/pysentosa-0.1.27-py2.7.egg
+easy_install dist/pysentosa-0.1.28-py2.7.egg
 popd

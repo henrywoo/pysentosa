@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Wu Fuheng(henry.woo@outlook.com)'
-__version__= '0.1.27'
+__version__= '0.1.28'
 
 from sentosa_ import tradingsystem
 from ticktype import *
