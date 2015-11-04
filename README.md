@@ -1,5 +1,6 @@
 ##pysentosa - Python API for sentosa trading system
 
+
 ============================================================================================
 
 - pysentosa is the Python API for sentosa trading system written by Wu Fuheng
@@ -7,6 +8,10 @@
 - WebSite: http://www.quant365.com (Quant365 - Trading with Science and Technology)
 
 - OS: Linux Ubuntu 15.10 64bit
+
+![](http://www.quant365.com/static/merlion.png)
+
+----
 
 - Installation:
 
