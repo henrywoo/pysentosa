@@ -16,6 +16,10 @@ TODO:
 
   ```
 
+    wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_nanomsg.sh
+    chmod u+x install_nanomsg.sh
+    ./install_nanomsg.sh
+
     wget https://raw.githubusercontent.com/henrywoo/pysentosa/master/install_yaml_cpp.sh
     chmod u+x install_yaml_cpp.sh
     ./install_yaml_cpp.sh
