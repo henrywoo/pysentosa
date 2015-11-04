@@ -22,7 +22,8 @@
     ./install_yaml_cpp.sh
 
     sudo apt-get install -y python-pip libboost-all-dev
-    sudo pip install -U pysentosa pyyaml netifaces websocket-client nanomsg setproctitle psutil
+    sudo pip install -U pysentosa pyyaml netifaces websocket-client nanomsg \
+      setproctitle psutil
   ```
 
 - Launch your IB TWS.
